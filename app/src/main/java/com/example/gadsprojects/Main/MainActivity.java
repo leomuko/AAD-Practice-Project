@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.gadsprojects.Main.UI.Hours.LearningFragment;
-import com.example.gadsprojects.Main.UI.SkillsFragment;
+import com.example.gadsprojects.Main.UI.Skills.SkillsFragment;
 import com.example.gadsprojects.R;
 import com.google.android.material.tabs.TabLayout;
 

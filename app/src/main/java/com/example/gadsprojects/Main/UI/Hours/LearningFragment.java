@@ -48,8 +48,6 @@ public class LearningFragment extends Fragment {
             @Override
             public void onResponse(Call<List<HourModel>> call, Response<List<HourModel>> response) {
                 List<HourModel> hourModelList = response.body();
-                Log.d(TAG, "onResponse: "+ hourModelList.size());
-                Log.d(TAG, "onResponse: "+ hourModelList.get(0).getHours());
                 setUpRecyclerView(hourModelList);
             }
 

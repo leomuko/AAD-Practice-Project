@@ -1,6 +1,7 @@
 package com.example.gadsprojects.Services;
 
 import com.example.gadsprojects.Models.HourModel;
+import com.example.gadsprojects.Models.SkillModel;
 
 import java.util.List;
 
@@ -13,5 +14,5 @@ public interface ApiInterface {
     Call<List<HourModel>> getHours();
 
     @GET("api/skilliq")
-    Call<List<HourModel>> getSkills();
+    Call<List<SkillModel>> getSkills();
 }
