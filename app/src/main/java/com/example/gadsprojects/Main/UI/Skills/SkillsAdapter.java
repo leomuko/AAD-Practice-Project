@@ -39,7 +39,7 @@ public class SkillsAdapter extends RecyclerView.Adapter<SkillsAdapter.Viewholder
     public void onBindViewHolder(@NonNull SkillsAdapter.Viewholder holder, int position) {
         SkillModel model = mSkillModels.get(position);
         holder.name.setText(model.getName());
-        holder.content.setText(model.getScore() +" learning hours "+ model.getCountry());
+        holder.content.setText(model.getScore() +" skill IQ score, "+ model.getCountry());
         Picasso.get().load(model.getBadgeUrl()).into(holder.userImage);
     }
 

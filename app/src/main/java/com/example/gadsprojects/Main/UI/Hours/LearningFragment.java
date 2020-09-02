@@ -3,6 +3,8 @@ package com.example.gadsprojects.Main.UI.Hours;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +19,7 @@ import com.example.gadsprojects.Services.ApiClient;
 import com.example.gadsprojects.Services.ApiInterface;
 
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,6 +32,7 @@ public class LearningFragment extends Fragment {
     private RecyclerView mRecycler;
     HourRecyclerAdapter mHourRecyclerAdapter;
     private static final String TAG = "LearningFragment";
+    private LearningFragmentViewModel mLearningFragmentViewModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,23 +41,23 @@ public class LearningFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_learning, container, false);
         mRecycler = rootView.findViewById(R.id.hour_recycler);
 
+        initialiseViewModel();
         fetchData();
         return rootView;
     }
 
-    private void fetchData() {
-        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<List<HourModel>> call = apiService.getHours();
-        call.enqueue(new Callback<List<HourModel>>() {
-            @Override
-            public void onResponse(Call<List<HourModel>> call, Response<List<HourModel>> response) {
-                List<HourModel> hourModelList = response.body();
-                setUpRecyclerView(hourModelList);
-            }
+    private void initialiseViewModel() {
+        mLearningFragmentViewModel = new ViewModelProvider(Objects.requireNonNull(getActivity()))
+                .get(LearningFragmentViewModel.class);
+    }
 
+    private void fetchData() {
+        mLearningFragmentViewModel.fetchDataFromApi();
+        mLearningFragmentViewModel.hoursList
+                .observe(Objects.requireNonNull(getActivity()), new Observer<List<HourModel>>() {
             @Override
-            public void onFailure(Call<List<HourModel>> call, Throwable t) {
-                Log.d(TAG, "onFailure: "+ t.getMessage());
+            public void onChanged(List<HourModel> hourModels) {
+                setUpRecyclerView(hourModels);
             }
         });
     }

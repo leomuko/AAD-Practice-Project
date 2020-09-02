@@ -41,7 +41,7 @@ public class HourRecyclerAdapter extends RecyclerView.Adapter<HourRecyclerAdapte
     public void onBindViewHolder(@NonNull HourRecyclerAdapter.ViewHolder holder, int position) {
         HourModel myLearner = mHourModels.get(position);
         holder.name.setText(myLearner.getName());
-        holder.content.setText(myLearner.getHours() +" learning hours "+ myLearner.getCountry());
+        holder.content.setText(myLearner.getHours() +" learning hours, "+ myLearner.getCountry());
         Picasso.get().load(myLearner.getBadgeUrl()).into(holder.userImage);
     }
 
