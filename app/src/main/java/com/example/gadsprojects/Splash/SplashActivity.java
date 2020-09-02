@@ -1,10 +1,13 @@
-package com.example.gadsprojects;
+package com.example.gadsprojects.Splash;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.gadsprojects.Main.MainActivity;
+import com.example.gadsprojects.R;
 
 public class SplashActivity extends AppCompatActivity {
 
