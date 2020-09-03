@@ -9,5 +9,14 @@
     android:theme="@style/ToolbarTheme"
     app:layout_constraintTop_toTopOf="parent"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-    tools:targetApi="lollipop" />
+    tools:targetApi="lollipop" >
+    <Button
+        android:id="@+id/toolbarButton"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:background="@drawable/ic_rectangle_10"
+        android:text="Submit"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_gravity="right"/>
+</androidx.appcompat.widget.Toolbar>
 
