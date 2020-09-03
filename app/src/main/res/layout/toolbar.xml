@@ -14,7 +14,7 @@
         android:id="@+id/toolbarButton"
         android:layout_width="100dp"
         android:layout_height="30dp"
-        android:background="@drawable/ic_rectangle_10"
+        android:background="@drawable/ic_rectangle"
         android:text="Submit"
         android:textColor="@color/colorPrimaryDark"
         android:layout_gravity="right"/>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 import com.example.gadsprojects.Main.UI.Hours.LearningFragment;
 import com.example.gadsprojects.Main.UI.Skills.SkillsFragment;
 import com.example.gadsprojects.R;
+import com.example.gadsprojects.SubmitActivity;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,12 +41,7 @@ public class MainActivity extends AppCompatActivity {
         mTabLayout.setupWithViewPager(mViewPager);
 
         mToolBarButton = findViewById(R.id.toolbarButton);
-        mToolBarButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Button Clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
+
 
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         getSupportActionBar().setTitle(R.string.toolbar_title);
@@ -54,6 +51,12 @@ public class MainActivity extends AppCompatActivity {
         mViewPagerAdapter.addFragment(mSkillsFragment, getString(R.string.skills));
 
         mViewPager.setAdapter(mViewPagerAdapter);
+        mToolBarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SubmitActivity.class));
+            }
+        });
     }
 
 
