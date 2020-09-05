@@ -1,23 +1,18 @@
 package com.example.gadsprojects.Main;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.gadsprojects.Main.UI.Hours.LearningFragment;
 import com.example.gadsprojects.Main.UI.Skills.SkillsFragment;
 import com.example.gadsprojects.R;
-import com.example.gadsprojects.SubmitActivity;
+import com.example.gadsprojects.Submit.SubmitActivity;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {

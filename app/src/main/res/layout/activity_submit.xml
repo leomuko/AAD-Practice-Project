@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".SubmitActivity">
+    tools:context=".Submit.SubmitActivity">
 
     <include
         android:id="@+id/toolbar1"
@@ -75,7 +75,7 @@
         android:background="@drawable/ic_button"
         android:ems="10"
         android:hint="Email Address"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:paddingStart="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
